@@ -128,7 +128,9 @@ brew install grep --with-default-names
 brew install less
 brew install bat
 brew install gpg
-
+brew install fzf
+# To install useful key bindings and fuzzy completion:
+$(brew --prefix)/opt/fzf/install
 
 
 
@@ -142,6 +144,8 @@ pip3 install --upgrade pip
 ### browser
 brew cask install opera 
 brew cask install firefox
+
+brew cask install standard-notes
 
 brew cask install visual-studio-code
 brew cask install flux
