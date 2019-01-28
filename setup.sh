@@ -153,6 +153,7 @@ brew cask install flux
 brew cask install docker
 brew install docker-compose
 brew install docker-machine
+brew install kotlin
 
 ### Quicklook plugins https://github.com/sindresorhus/quick-look-plugins
 brew cask install qlcolorcode # syntax highlighting in preview
@@ -164,6 +165,8 @@ brew cask install quicklook-csv  # preview csvs
 
 brew cask install slack
 
+brew cask install mactex
+brew cask install adoptopenjdk
 
 brew cask install vlc
 brew cask install spotify
@@ -190,8 +193,6 @@ then
 else
 	cecho "App Store login not complete. Skipping installing App Store Apps" $red
 fi
-
-
 
 
 
