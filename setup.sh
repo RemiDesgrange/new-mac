@@ -117,7 +117,7 @@ read -p 'Input name for git setup: ' gitname
 git config --global user.name "$gitname"
 
 
-brew install wget
+brew install wget htop
 brew install zsh zsh-completions
 chsh -s /bin/zsh
 sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
