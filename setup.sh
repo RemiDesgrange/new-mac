@@ -131,7 +131,8 @@ brew install gpg
 brew install fzf
 # To install useful key bindings and fuzzy completion:
 $(brew --prefix)/opt/fzf/install
-
+brew install bitwarden-cli
+brew cask install bitwarden
 
 
 
