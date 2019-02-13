@@ -155,6 +155,8 @@ brew cask install docker
 brew install docker-compose
 brew install docker-machine
 brew install kotlin
+brew install elixir
+brew cask install pgadmin4
 
 ### Quicklook plugins https://github.com/sindresorhus/quick-look-plugins
 brew cask install qlcolorcode # syntax highlighting in preview
