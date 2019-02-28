@@ -265,6 +265,7 @@ defaults write com.apple.dock show-recents -bool false
 defaults write NSGlobalDomain NSAutomaticQuoteSubstitutionEnabled -bool false
 defaults write NSGlobalDomain NSAutomaticDashSubstitutionEnabled -bool false
 
+defaults write com.apple.dock mru-spaces -bool false
 
 # Require password immediately after sleep or screen saver begins"
 defaults write com.apple.screensaver askForPassword -int 1
@@ -317,6 +318,10 @@ killall mds
 # Disable “natural” (Lion-style) scrolling
 # Uncomment if you don't use scroll reverser
 # defaults write NSGlobalDomain com.apple.swipescrolldirection -bool false
+
+#"Disable smart quotes and smart dashes as they are annoying when typing code"
+defaults write NSGlobalDomain NSAutomaticQuoteSubstitutionEnabled -bool false
+defaults write NSGlobalDomain NSAutomaticDashSubstitutionEnabled -bool false
 
 # Stop iTunes from responding to the keyboard media keys
 launchctl unload -w /System/Library/LaunchAgents/com.apple.rcd.plist 2> /dev/null
