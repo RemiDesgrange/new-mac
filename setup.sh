@@ -100,17 +100,15 @@ done
 
 cecho "Starting brew app install... 👨‍💻" $green
 
-brew cask install spectacle
+brew install --cask spectacle
 
 ### Developer Tools
-brew cask install iterm2
+brew install --cask iterm2
 curl -L -o solarized https://ethanschoonover.com/solarized/files/solarized.zip
 cecho "Solaried ☀ theme download in home dir. You have to install it yourself ☹️" $red
 brew install ispell
 brew install vim --with-python --with-ruby --with-perl
 brew install macvim --env-std --override-system-vim
-brew cask install gitkraken
-
 
 brew install git  # upgrade to latest
 brew install git-lfs # track large files in git https://github.com/git-lfs/git-lfs
