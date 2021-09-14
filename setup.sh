@@ -44,10 +44,13 @@ then
   /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)" < /dev/null
 fi
 
+echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> /Users/$USER/.zprofile
+eval "$(/opt/homebrew/bin/brew shellenv)"remi
+
 # Latest brew, install brew cask
 brew upgrade
 brew update
-brew tap caskroom/cask
+brew tap homebrew/cask
 
 
 cecho "Generating ssh keys, adding 🔑" $green
