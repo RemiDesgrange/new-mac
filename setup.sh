@@ -45,7 +45,7 @@ then
 fi
 
 echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> /Users/$USER/.zprofile
-eval "$(/opt/homebrew/bin/brew shellenv)"remi
+eval "$(/opt/homebrew/bin/brew shellenv)" $USER
 
 # Latest brew, install brew cask
 brew upgrade
