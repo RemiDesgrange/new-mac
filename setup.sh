@@ -45,7 +45,7 @@ then
 fi
 
 echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> /Users/$USER/.zprofile
-eval "$(/opt/homebrew/bin/brew shellenv)" $USER
+eval "$(/opt/homebrew/bin/brew shellenv)"
 
 # Latest brew, install brew cask
 brew upgrade
@@ -100,7 +100,7 @@ done
 
 cecho "Starting brew app install... 👨‍💻" $green
 
-brew install --cask spectacle
+brew install --cask rectangle
 
 ### Developer Tools
 brew install --cask iterm2
