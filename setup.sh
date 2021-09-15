@@ -133,7 +133,7 @@ brew install fzf
 # To install useful key bindings and fuzzy completion:
 $(brew --prefix)/opt/fzf/install
 brew install bitwarden-cli
-brew cask install bitwarden
+brew install --cask bitwarden
 
 
 
@@ -144,41 +144,38 @@ brew install ipython
 pip3 install --upgrade pip
 
 ### browser
-brew cask install opera 
-brew cask install firefox
+brew install --cask opera 
+brew install --cask firefox
 
-brew cask install standard-notes
+brew install --cask visual-studio-code
+brew install --cask flux
 
-brew cask install visual-studio-code
-brew cask install flux
-
-brew cask install docker
+brew install --cask docker
 brew install docker-compose
 brew install docker-machine
 brew install kotlin
 brew install elixir
-brew cask install pgadmin4
+brew install --cask pgadmin4
 
 ### Quicklook plugins https://github.com/sindresorhus/quick-look-plugins
-brew cask install qlcolorcode # syntax highlighting in preview
-brew cask install qlstephen  # preview plaintext files without extension
-brew cask install qlmarkdown  # preview markdown files
-brew cask install quicklook-json  # preview json files
-brew cask install epubquicklook  # preview epubs, make nice icons
-brew cask install quicklook-csv  # preview csvs
+brew install --cask qlcolorcode # syntax highlighting in preview
+brew install --cask qlstephen  # preview plaintext files without extension
+brew install --cask qlmarkdown  # preview markdown files
+brew install --cask quicklook-json  # preview json files
+brew install --cask epubquicklook  # preview epubs, make nice icons
+brew install --cask quicklook-csv  # preview csvs
 
-brew cask install slack
+brew install --cask slack
 
-brew cask install mactex
-brew cask install adoptopenjdk
+brew install --cask adoptopenjdk
 
-brew cask install vlc
-brew cask install spotify
+brew install --cask vlc
+brew install --cask spotify
 
 
-brew tap caskroom/fonts
+#brew tap caskroom/fonts
 
-cd ~/Library/Fonts && { curl -O 'https://github.com/Falkor/dotfiles/blob/master/fonts/SourceCodePro+Powerline+Awesome+Regular.ttf?raw=true' ; cd -; }
+#cd ~/Library/Fonts && { curl -O 'https://github.com/Falkor/dotfiles/blob/master/fonts/SourceCodePro+Powerline+Awesome+Regular.ttf?raw=true' ; cd -; }
 
 
 cecho "Installing apps from the App Store... 🏬" $green
@@ -387,8 +384,8 @@ sudo pmset -a sms 0
 # 12: Notification Center
 
 # Bottom left screen corner → Mission Control
-defaults write com.apple.dock wvous-bl-corner -int 2
-defaults write com.apple.dock wvous-bl-modifier -int 0
+#defaults write com.apple.dock wvous-bl-corner -int 2
+#defaults write com.apple.dock wvous-bl-modifier -int 0
 
 
 # Bottom right screen corner → Start screen saver
@@ -399,67 +396,6 @@ defaults write com.apple.dock wvous-br-modifier -int 0
 osascript -e 'tell application "Finder" to set desktop picture to POSIX file "/Library/Desktop Pictures/Shapes.jpg"'
 
 
-#### Setup VIM
-cecho "Setup Vim" $green
-git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
-
-### Append at the end of the file
-cat << EOF >> ~/.vimrc
-syntax on
-set t_Co=256
-set encoding=utf8
-set expandtab
-set shiftwidth=4
-set tabstop=4
-
-" Linebreak on 500 characters
-set lbr
-set tw=500
-
-set ai "Auto indent
-set si "Smart indent
-
-set laststatus=2
-set nu
-
-set nocompatible              " be iMproved, required
-filetype off                  " required
-
-" set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-" alternatively, pass a path where Vundle should install plugins
-"call vundle#begin('~/some/path/here')
-
-" let Vundle manage Vundle, required
-Plugin 'VundleVim/Vundle.vim'
-Plugin 'vim-airline/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
-
-" All of your Plugins must be added before the following line
-call vundle#end()            " required
-filetype plugin indent on    " required
-" To ignore plugin indent changes, instead use:
-"filetype plugin on
-"
-" Brief help
-" :PluginList       - lists configured plugins
-" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
-" :PluginSearch foo - searches for foo; append `!` to refresh local cache
-" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
-"
-" see :h vundle for more details or wiki for FAQ
-" Put your non-Plugin stuff after this line
-
-let g:airline_powerline_fonts = 1
-set encoding=utf-8
-set t_Co=256
-set fillchars+=stl:\ ,stlnc:\
-set term=xterm-256color
-set termencoding=utf-8
-
-EOF
-vim +PluginInstall +qall
 
 echo ""
 cecho "Done!" $cyan
