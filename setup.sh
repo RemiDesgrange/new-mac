@@ -1,6 +1,6 @@
 #!/bin/sh
 
-# OSX install script a lot has been bored from https://github.com/nnja/new-computer and https://github.com/ruyadorno/installme-osx
+# OSX install script a lot has been borrowed from https://github.com/nnja/new-computer and https://github.com/ruyadorno/installme-osx
 
 # Set the colours you can use
 black=$(tput setaf 0)
