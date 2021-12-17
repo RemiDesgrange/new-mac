@@ -186,7 +186,8 @@ fi
 
 
 cecho "cleanup brew" $green
-brew cleanup
+brew cleanup -s
+brew autoremove
 
 
 ##################
