@@ -99,7 +99,7 @@ done
 [[ $retries -eq i ]] && cecho "Adding ssh-key to GitHub failed! Try again later." $red
 
 cecho "Starting brew app install... 👨‍💻" $green
-
+# moving like a pro
 brew install --cask rectangle
 
 ### Developer Tools
@@ -107,8 +107,8 @@ brew install --cask iterm2
 curl -L -o solarized https://ethanschoonover.com/solarized/files/solarized.zip
 cecho "Solaried ☀ theme download in home dir. You have to install it yourself ☹️" $red
 brew install ispell
-brew install vim --with-python --with-ruby --with-perl
-brew install macvim --env-std --override-system-vim
+brew install --cask neovim
+brew install --cask alacritty
 
 brew install git  # upgrade to latest
 brew install git-lfs # track large files in git https://github.com/git-lfs/git-lfs
@@ -119,23 +119,29 @@ git config --global user.name "$gitname"
 
 
 brew install wget htop
-brew install zsh zsh-completions
+brew install zsh
 chsh -s /bin/zsh
 sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
-sed -i -e 's/ZSH_THEME=\".*\"/ZSH_THEME=\"agnoster\"/g' $HOME/.zshrc
+brew install tmux
 brew install tree
 brew link curl --force
 brew install grep --with-default-names
+brew install ripgrep-all
 brew install less
 brew install bat
 brew install gpg
 brew install fzf
+brew install procs
 # To install useful key bindings and fuzzy completion:
 $(brew --prefix)/opt/fzf/install
 brew install bitwarden-cli
 brew install --cask bitwarden
 
-
+#load my dot files stored on github
+echo "alias config='git --git-dir=$HOME/.dot-files-repo/ --work-tree=$HOME'">~/.zshrc
+echo ".dot-files-repo" >> $HOME/.gitignore
+git clone --bare git@github.com:RemiDesgrange/dot-files.git $HOME/.dot-files-repo
+git --git-dir=$HOME/.cfg/ --work-tree=$HOME checkout
 
 ### Python
 brew install python
@@ -144,39 +150,21 @@ brew install ipython
 pip3 install --upgrade pip
 
 ### browser
-brew install --cask opera 
+brew install --cask opera
 brew install --cask firefox
+
 
 brew install --cask visual-studio-code
 brew install --cask flux
 
 brew install --cask docker
-brew install docker-compose
-brew install docker-machine
 brew install kotlin
-brew install elixir
-brew install --cask pgadmin4
-
-### Quicklook plugins https://github.com/sindresorhus/quick-look-plugins
-brew install --cask qlcolorcode # syntax highlighting in preview
-brew install --cask qlstephen  # preview plaintext files without extension
-brew install --cask qlmarkdown  # preview markdown files
-brew install --cask quicklook-json  # preview json files
-brew install --cask epubquicklook  # preview epubs, make nice icons
-brew install --cask quicklook-csv  # preview csvs
-
 brew install --cask slack
-
-brew install --cask adoptopenjdk
-
 brew install --cask vlc
 brew install --cask spotify
 
-
-#brew tap caskroom/fonts
-
-#cd ~/Library/Fonts && { curl -O 'https://github.com/Falkor/dotfiles/blob/master/fonts/SourceCodePro+Powerline+Awesome+Regular.ttf?raw=true' ; cd -; }
-
+brew tap homebrew/cask-fonts
+brew install --cask font-jetbrains-mono
 
 cecho "Installing apps from the App Store... 🏬" $green
 
@@ -291,8 +279,6 @@ defaults write com.apple.systemuiserver menuExtras -array \
    "/System/Library/CoreServices/Menu Extras/Battery.menu" \
    "/System/Library/CoreServices/Menu Extras/Clock.menu"
 
-# Disable the sound effects on boot
-sudo nvram SystemAudioVolume=" "
 
 ###############################################################################
 # Spotlight                                                                   #
@@ -391,11 +377,6 @@ sudo pmset -a sms 0
 # Bottom right screen corner → Start screen saver
 defaults write com.apple.dock wvous-br-corner -int 5
 defaults write com.apple.dock wvous-br-modifier -int 0
-
-# this works on elcap. Need to download on > 10.11 😥.
-osascript -e 'tell application "Finder" to set desktop picture to POSIX file "/Library/Desktop Pictures/Shapes.jpg"'
-
-
 
 echo ""
 cecho "Done!" $cyan
