@@ -132,6 +132,7 @@ brew install bat
 brew install gpg
 brew install fzf
 brew install procs
+brew install zoxide
 # To install useful key bindings and fuzzy completion:
 $(brew --prefix)/opt/fzf/install
 brew install bitwarden-cli
