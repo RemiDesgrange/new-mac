@@ -122,6 +122,8 @@ brew install wget htop
 brew install zsh
 chsh -s /bin/zsh
 sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+brew install zsh-autosuggestions
+brew install zsh-syntax-highlighting
 brew install tmux
 brew install tree
 brew link curl --force
