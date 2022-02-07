@@ -111,8 +111,7 @@ brew install --cask neovim
 brew install --cask alacritty
 brew install uutils-coreutils
 
-brew install git  # upgrade to latest
-brew install git-lfs # track large files in git https://github.com/git-lfs/git-lfs
+brew install git git-lfs # upgrade to latest
 read -p 'Input email for git setup: ' gitemail
 git config --global user.email "$gitemail"
 read -p 'Input name for git setup: ' gitname
@@ -129,11 +128,7 @@ brew link curl --force
 brew install grep --with-default-names
 brew install ripgrep-all
 brew install less
-brew install bat
-brew install gpg
-brew install fzf
-brew install procs
-brew install zoxide
+brew install bat gpg fzf procs exa zoxide
 # To install useful key bindings and fuzzy completion:
 $(brew --prefix)/opt/fzf/install
 brew install bitwarden-cli
