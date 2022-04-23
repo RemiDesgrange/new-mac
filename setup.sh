@@ -104,11 +104,12 @@ brew install --cask rectangle
 
 ### Developer Tools
 brew install --cask iterm2
-curl -L -o solarized https://ethanschoonover.com/solarized/files/solarized.zip
+curl -L -o solarized.zip https://ethanschoonover.com/solarized/files/solarized.zip
 cecho "Solaried ☀ theme download in home dir. You have to install it yourself ☹️" $red
 brew install ispell
 brew install --cask neovim
 brew install --cask alacritty
+brew install uutils-coreutils
 
 brew install git  # upgrade to latest
 brew install git-lfs # track large files in git https://github.com/git-lfs/git-lfs
@@ -120,8 +121,6 @@ git config --global user.name "$gitname"
 
 brew install wget htop
 brew install zsh
-chsh -s /bin/zsh
-sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 brew install zsh-autosuggestions
 brew install zsh-syntax-highlighting
 brew install tmux
@@ -141,10 +140,10 @@ brew install bitwarden-cli
 brew install --cask bitwarden
 
 #load my dot files stored on github
-echo "alias config='git --git-dir=$HOME/.dot-files-repo/ --work-tree=$HOME'">~/.zshrc
+echo "alias config='git --git-dir=$HOME/.dot-files-repo/ --work-tree=$HOME'">>~/.zshrc
 echo ".dot-files-repo" >> $HOME/.gitignore
 git clone --bare git@github.com:RemiDesgrange/dot-files.git $HOME/.dot-files-repo
-git --git-dir=$HOME/.cfg/ --work-tree=$HOME checkout
+git --git-dir=$HOME/.dot-files-repo/ --work-tree=$HOME checkout
 
 ### Python
 brew install python
@@ -162,7 +161,6 @@ brew install --cask flux
 
 brew install --cask docker
 brew install kotlin
-brew install --cask slack
 brew install --cask vlc
 brew install --cask spotify
 
