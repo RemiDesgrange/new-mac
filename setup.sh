@@ -126,7 +126,7 @@ brew link curl --force
 brew install grep --with-default-names
 brew install ripgrep-all
 brew install less
-brew install bat gpg fzf procs exa zoxide
+brew install bat gpg fzf procs exa zoxide stats caffeine
 # To install useful key bindings and fuzzy completion:
 $(brew --prefix)/opt/fzf/install
 brew install bitwarden-cli
@@ -142,8 +142,7 @@ git --git-dir=$HOME/.dot-files-repo/ --work-tree=$HOME checkout
 brew install python
 
 ### browser
-brew install --cask opera firefox visual-studio-code flux docker vlc spotify
-brew install --cask firefox
+brew install --cask opera firefox visual-studio-code flux docker vlc spotify keepingyouawake
 
 brew tap homebrew/cask-fonts
 brew install --cask font-jetbrains-mono
