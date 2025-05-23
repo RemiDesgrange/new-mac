@@ -103,12 +103,11 @@ cecho "Starting brew app install... 👨‍💻" $green
 brew install --cask rectangle
 
 ### Developer Tools
-brew install --cask iterm2
 curl -L -o solarized.zip https://ethanschoonover.com/solarized/files/solarized.zip
 cecho "Solaried ☀ theme download in home dir. You have to install it yourself ☹️" $red
 brew install ispell
 brew install --cask neovim
-brew install --cask alacritty
+brew install --cask ghostty
 brew install uutils-coreutils
 
 brew install git git-lfs # upgrade to latest
@@ -142,22 +141,10 @@ git --git-dir=$HOME/.dot-files-repo/ --work-tree=$HOME checkout
 
 ### Python
 brew install python
-brew install pyenv
-brew install ipython
-pip3 install --upgrade pip
 
 ### browser
-brew install --cask opera
+brew install --cask opera firefox visual-studio-code flux docker vlc spotify
 brew install --cask firefox
-
-
-brew install --cask visual-studio-code
-brew install --cask flux
-
-brew install --cask docker
-brew install kotlin
-brew install --cask vlc
-brew install --cask spotify
 
 brew tap homebrew/cask-fonts
 brew install --cask font-jetbrains-mono
@@ -304,9 +291,6 @@ killall mds
 defaults write NSGlobalDomain NSAutomaticQuoteSubstitutionEnabled -bool false
 defaults write NSGlobalDomain NSAutomaticDashSubstitutionEnabled -bool false
 
-# Stop iTunes from responding to the keyboard media keys
-launchctl unload -w /System/Library/LaunchAgents/com.apple.rcd.plist 2> /dev/null
-
 # Trackpad: enable tap to click for this user and for the login screen
 defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad Clicking -bool true
 defaults -currentHost write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
@@ -330,16 +314,6 @@ defaults write com.apple.SoftwareUpdate CriticalUpdateInstall -int 1
 
 # Prevent Photos from opening automatically when devices are plugged in
 defaults -currentHost write com.apple.ImageCapture disableHotPlug -bool true
-
-###
-# SSD
-###
-# Disable hibernation (speeds up entering sleep mode)
-sudo pmset -a hibernatemode 0
-
-#"Disabling system-wide resume"
-defaults write NSGlobalDomain NSQuitAlwaysKeepsWindows -bool false
-
 
 
 # Remove the sleep image file to save disk space
