@@ -50,7 +50,6 @@ eval "$(/opt/homebrew/bin/brew shellenv)"
 # Latest brew, install brew cask
 brew upgrade
 brew update
-brew tap homebrew/cask
 
 
 cecho "Generating ssh keys, adding 🔑" $green
